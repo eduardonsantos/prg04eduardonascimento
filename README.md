@@ -7,7 +7,6 @@ A aplicação adota uma arquitetura de sistemas distribuídos, onde este reposit
 
 ## Tecnologias Utilizadas
 * **Frontend:** HTML5, CSS3 e JavaScript (Vanilla)
-* **Integração:** Fetch API para consumo de endpoints JSON
 * **Backend (Repositório Externo):** API RESTful estruturada em Java (Spring Boot) e PostgreSQL
 
 ## Estrutura do Projeto

@@ -10,6 +10,10 @@ body {
     padding: 40px;
 }
 
+header {
+    text-align: center;
+}
+
 h1, h2 {
     color: #0055A4;
     text-align: center;
@@ -30,86 +34,78 @@ a {
     background-color: #0055A4;
     color: #FFFFFF;
     padding: 30px;
-    margin: 15px;
+    margin: 15px auto;
     text-align: center;
     font-size: 22px;
+    min-width: 400px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .caixa-verde {
     background-color: #228B22;
     color: #FFFFFF;
     padding: 30px;
-    margin: 15px;
+    margin: 15px auto;
     text-align: center;
     font-size: 22px;
+    min-width: 400px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .caixa-branca {
     background-color: #FFFFFF;
     color: #0055A4;
     padding: 30px;
-    margin: 15px;
+    margin: 15px auto;
     text-align: center;
     font-size: 22px;
-}
-
-
-
-nav#menu {
-    display: block; /* um block pode flutuar pela tela */
-}
-
-nav#menu ul {
-    list-style: none;          /* esconde o marcador */
-    text-transform: uppercase; /* deixa tudo maiúsculo */
-    position: absolute;        /* posição absoluta é referente ao site todo,
-                                   pois o nav (pai) não tem position: relative */
-    top: 0px;
-    left: 0px;                 /* AJUSTE top/left no DevTools até encaixar
-                                   no seu header (veja a observação abaixo) */
-}
-
-nav#menu li {
-    display: inline-block;      /* faz os itens ficarem na mesma linha */
-    background-color: #dddddd;  /* fundo cinza, igual ao exemplo do slide */
-    padding: 10px;               /* espaço interno do item */
-    margin: 2px;                 /* espaço fora do item */
-    transition: background-color 1s; /* troca de cor suave */
-}
-
-nav#menu li:hover {
-    background-color: #606060;  /* efeito ao passar o mouse por cima */
-}
-
-nav#menu h1 {
-    display: none; /* esconde o h1, se você adicionar um dentro do nav */
-}
-
-nav#menu a {
-    color: black;              /* deixa os links com a cor preta */
-    text-decoration: none;     /* retira o sublinhado do link */
-}
-
-nav#menu a:hover {
-    color: #ffffff;             /* muda a cor da letra no hover */
-    text-decoration: underline; /* mostra o sublinhado quando passar o mouse */
-}
-
-
-/* Caixas com largura adaptável: nunca menores que 400px nem
-   maiores que 800px; entre esses limites, ocupam 100% do espaço */
-.caixa-azul,
-.caixa-verde,
-.caixa-branca {
     min-width: 400px;
     max-width: 800px;
     width: 100%;
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Telas médias (tablets, até 768px) */
+nav#menu {
+    display: block;
+}
+
+nav#menu ul {
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0;
+    text-align: center;
+}
+
+nav#menu li {
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 2px;
+    transition: background-color 1s;
+}
+
+nav#menu li:hover {
+    background-color: #606060;
+}
+
+nav#menu h1 {
+    display: none;
+}
+
+nav#menu a {
+    color: black;
+    text-decoration: none;
+}
+
+nav#menu a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 20px;
@@ -120,7 +116,6 @@ nav#menu a:hover {
     }
 }
 
-/* Telas pequenas (celulares, até 480px) */
 @media (max-width: 480px) {
     body {
         padding: 10px;
@@ -130,15 +125,24 @@ nav#menu a:hover {
         font-size: 24px;
     }
 
+    nav#menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
     nav#menu li {
-        display: block;   /* empilha os itens do menu verticalmente */
-        margin: 4px auto;
+        display: block;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
     }
 
     .caixa-azul,
     .caixa-verde,
     .caixa-branca {
-        min-width: 0;      /* em telas muito pequenas, deixa encolher além de 400px */
+        min-width: 0;
         padding: 20px;
         font-size: 18px;
     }

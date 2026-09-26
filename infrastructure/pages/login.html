@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Gerenciamento de Tributos</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+        <p>Voltar a página anterior: <a href="index.html" rel="prev">Voltar</a></p>
+    </header>
+
+    <main>
+        <section id="login">
+            <h2>Acesso ao Painel Administrativo</h2>
+            <p>Informe um e-mail válido e uma senha para simular o acesso à área restrita do sistema.</p>
+
+            <form action="admin.html" method="get">
+                <div class="campo-form">
+                    <label for="email">E-mail</label>
+                    <!-- Altere o type="text" para type="email" abaixo -->
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        inputmode="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                        title="Informe um e-mail em um formato válido, com domínio completo, por exemplo: nome@dominio.com">
+                    <span class="mensagem-erro">Informe um e-mail válido, por exemplo: nome@dominio.com</span>
+                </div>
+
+                <div class="campo-form">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite sua senha"
+                        required
+                        pattern=".{6,}"
+                        title="A senha deve ter pelo menos 6 caracteres">
+                    <span class="mensagem-erro">A senha deve ter pelo menos 6 caracteres.</span>
+                </div>
+
+                <input type="submit" value="Entrar">
+                <input type="reset" value="Limpar">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

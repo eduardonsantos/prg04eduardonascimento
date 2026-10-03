@@ -132,7 +132,7 @@ nav#menu ul {
 nav#menu li {
     background-color: #dddddd;
     padding: 10px;
-    transition: background-color 1s;
+    transition: background-color 0.5s;
 }
 
 nav#menu li:hover {

@@ -1,15 +1,75 @@
-# Sistema de Gerenciamento de Tributos - Web
+# Sistema de Gerenciamento de Tributos — Web
 
-## Sobre o Projeto
-Esta é a interface web de um sistema desenvolvido para a administração, consulta e emissão de tributos municipais, com foco principal na gestão do Imposto Predial e Territorial Urbano (IPTU). O software permite o controle de contribuintes, o gerenciamento de imóveis e a geração de guias de pagamento de forma digital.
+Interface web de um sistema para administração, consulta e emissão de tributos municipais, com foco no **Imposto Predial e Territorial Urbano (IPTU)**. O sistema permite controlar contribuintes, gerenciar imóveis e gerar guias de pagamento de forma digital.
 
-A aplicação adota uma arquitetura de sistemas distribuídos, onde este repositório atua exclusivamente como o **Frontend** (camada de apresentação). Toda a lógica de negócios e banco de dados é consumida via requisições RESTful a uma API **Backend** independente.
+Este repositório é exclusivamente o **Frontend** (camada de apresentação). Toda a lógica de negócio e o banco de dados ficam em uma API Backend independente, consumida via requisições RESTful.
 
-## Tecnologias Utilizadas
-* **Frontend:** HTML5, CSS3 e JavaScript (Vanilla)
-* **Backend (Repositório Externo):** API RESTful estruturada em Java (Spring Boot) e PostgreSQL
+## Funcionalidades
+
+- Portal inicial com informações do projeto e avisos do sistema
+- Tela de login e área administrativa
+- Gestão de contribuintes e imóveis
+- Geração de guias de pagamento do IPTU
+- Páginas de apoio ao desenvolvimento: paleta de cores e campo de testes
+
+> Algumas funcionalidades dependem da integração com o Backend e podem estar em desenvolvimento.
+
+## Tecnologias
+
+| Camada | Tecnologias |
+| --- | --- |
+| Frontend (este repositório) | HTML5, CSS3 e JavaScript (Vanilla) |
+| Backend (repositório externo) | API RESTful em Java (Spring Boot) com PostgreSQL |
+
+## Arquitetura
+
+Sistema distribuído em duas partes que se comunicam por HTTP/JSON:
+
+```
+[ Navegador ]  →  Frontend (HTML/CSS/JS)  →  API REST (Spring Boot)  →  PostgreSQL
+```
 
 ## Estrutura do Projeto
-* `assets/`: Recursos estáticos (CSS, imagens e scripts JS para manipulação do DOM e requisições).
-* `pages/`: Telas secundárias do sistema (gestão, cadastros, relatórios).
-* `index.html`: Portal inicial de login/acesso.
+
+```
+prg04projetoweb/
+├── .vscode/                      # Configurações do editor
+├── infrastructure/
+│   ├── assets/
+│   │   ├── audio/
+│   │   │   └── background-music.mp3
+│   │   ├── css/
+│   │   │   └── style.css         # Estilos globais
+│   │   ├── favicon/              # Ícones do site
+│   │   ├── images/               # Imagens responsivas (400, 700 e 1000 px)
+│   │   └── js/                   # Scripts: manipulação do DOM e requisições à API
+│   └── pages/
+│       ├── index.html            # Página inicial
+│       ├── login.html            # Acesso ao sistema
+│       ├── admin.html            # Área administrativa
+│       ├── paleta.html           # Paleta de cores do sistema
+│       ├── sandbox.html          # Campo de testes
+│       └── atividade-3.html      # Atividade da disciplina
+└── README.md
+```
+
+| Pasta / Arquivo | Descrição |
+| --- | --- |
+| `infrastructure/assets/` | Recursos estáticos: áudio, CSS, favicons, imagens e scripts JS |
+| `infrastructure/pages/` | Todas as telas do sistema, incluindo a página inicial (`index.html`) |
+| `infrastructure/pages/index.html` | Ponto de entrada: apresentação do projeto e avisos |
+
+## Como Executar
+
+1. Clone o repositório:
+   ```bash
+   git clone <url-do-repositorio>
+   cd prg04projetoweb
+   ```
+2. Abra a pasta no VS Code e instale a extensão **Live Server**.
+3. Clique com o botão direito em `infrastructure/pages/index.html` e escolha **Open with Live Server**.
+4. Para as funcionalidades que dependem de dados, mantenha o Backend em execução e configure o endereço da API nos scripts em `assets/js/`.
+
+## Autor
+
+Desenvolvido por **Eduardo Nascimento Santos**.

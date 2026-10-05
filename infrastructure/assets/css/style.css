@@ -3,44 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* =====================================================================
-   ESTILOS BASE - MOBILE FIRST (smartphones, até 600px)
+   ESTILOS GERAIS (valem para todas as páginas)
    ===================================================================== */
 
 body {
     background-color: #f0f7f7;
     font-family: 'Inter', sans-serif;
     color: #333333;
-    margin: 0;
-    padding: 10px;
-    font-size: 1rem;
-}
-
-header {
-    text-align: center;
-}
-
-h1, h2 {
-    color: #0055A4;
-    text-align: center;
-}
-
-h1 {
-    font-size: 1.5rem;
-}
-
-h2 {
-    font-size: 1.25rem;
-}
-
-p {
-    font-size: 1rem;
-    line-height: 1.5;
-    text-align: left;
-}
-
-a {
-    color: #0055A4;
-    font-weight: 700;
 }
 
 img,
@@ -48,29 +17,71 @@ iframe {
     max-width: 100%;
 }
 
-/* ---------- Layout principal (Flexbox: coluna no celular) ---------- */
+/* =====================================================================
+   LOGIN (validação visual dos campos)
+   ===================================================================== */
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-aside {
-    background-color: #FFFFFF;
-    border-left: 4px solid #228B22;
-    padding: 0 15px 15px;
-}
-
-footer {
-    margin-top: 30px;
-    text-align: center;
-}
-
-footer p {
+.mensagem-erro {
+    display: none;
+    color: #c0392b;
     font-size: 0.875rem;
-    color: #606060;
+    margin-top: 4px;
+}
+
+.form-control:not(:placeholder-shown):invalid {
+    border: 2px solid #c0392b;
+    background-color: #fbeaea;
+}
+
+.form-control:not(:placeholder-shown):valid {
+    border: 2px solid #228B22;
+}
+
+.form-control:not(:placeholder-shown):invalid ~ .mensagem-erro {
+    display: block;
+}
+
+/* =====================================================================
+   ADMIN (tabela de usuários)
+   ===================================================================== */
+
+.acoes {
+    white-space: nowrap;
+}
+
+
+body.pagina-simples {
+    margin: 0;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.pagina-simples header {
     text-align: center;
+}
+
+.pagina-simples h1,
+.pagina-simples h2 {
+    color: #0055A4;
+    text-align: center;
+}
+
+.pagina-simples h1 {
+    font-size: 1.5rem;
+}
+
+.pagina-simples h2 {
+    font-size: 1.25rem;
+}
+
+.pagina-simples p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.pagina-simples a {
+    color: #0055A4;
+    font-weight: 700;
 }
 
 /* ---------- Paleta de cores (Flexbox: caixas empilhadas) ---------- */
@@ -85,7 +96,6 @@ footer p {
 .caixa-verde,
 .caixa-branca {
     width: 100%;
-    margin: 0;
     padding: 20px;
     text-align: center;
     font-size: 1.125rem;
@@ -114,243 +124,25 @@ footer p {
     color: #0055A4;
 }
 
-/* ---------- Menu (Flexbox: itens em coluna) ---------- */
-
-nav#menu {
-    display: block;
-}
-
-nav#menu ul {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    list-style: none;
-    text-transform: uppercase;
-    padding: 0;
-}
-
-nav#menu li {
-    background-color: #dddddd;
-    padding: 10px;
-    transition: background-color 0.5s;
-}
-
-nav#menu li:hover {
-    background-color: #606060;
-}
-
-nav#menu h1 {
-    display: none;
-}
-
-nav#menu a {
-    color: black;
-    text-decoration: none;
-}
-
-nav#menu a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-/* ---------- Login / formulário ---------- */
-
-section#login {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.campo-form {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.campo-form label {
-    display: block;
-    font-weight: 700;
-    color: #333333;
-    margin-bottom: 6px;
-}
-
-.campo-form input {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    font-family: 'Inter', sans-serif;
-    border: 1px solid #cccccc;
-    box-sizing: border-box;
-}
-
-.campo-form input:not(:placeholder-shown):invalid {
-    border: 2px solid #c0392b;
-    background-color: #fbeaea;
-}
-
-.campo-form input:not(:placeholder-shown):valid {
-    border: 2px solid #228B22;
-}
-
-.mensagem-erro {
-    display: none;
-    color: #c0392b;
-    font-size: 0.875rem;
-    margin-top: 4px;
-}
-
-.campo-form input:not(:placeholder-shown):invalid ~ .mensagem-erro {
-    display: block;
-}
-
-/* No celular os botões ocupam a largura toda */
-input[type="submit"],
-input[type="reset"] {
-    display: block;
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-input[type="submit"] {
-    background-color: #0055A4;
-    color: #FFFFFF;
-}
-
-input[type="submit"]:hover {
-    background-color: #003d75;
-}
-
-input[type="reset"] {
-    background-color: #dddddd;
-    color: #333333;
-}
-
-input[type="reset"]:hover {
-    background-color: #606060;
-    color: #ffffff;
-}
-
-/*  Tabela de usuários (celular: cada linha vira um cartão) */
-
-table#tabela-usuarios,
-table#tabela-usuarios tbody,
-table#tabela-usuarios tr {
-    display: block;
-    width: 100%;
-}
-
-table#tabela-usuarios {
-    margin: 20px 0;
-}
-
-table#tabela-usuarios caption {
-    text-align: left;
-    font-size: 0.875rem;
-    color: #606060;
-    margin-bottom: 10px;
-}
-
-table#tabela-usuarios thead {
-    display: none;
-}
-
-table#tabela-usuarios tr {
-    margin-bottom: 15px;
-    border: 1px solid #cccccc;
-}
-
-table#tabela-usuarios td {
-    display: block;
-    border: none;
-    border-bottom: 1px solid #dddddd;
-    padding: 12px;
-    text-align: left;
-    font-size: 1rem;
-}
-
-table#tabela-usuarios th {
-    background-color: #0055A4;
-    color: #FFFFFF;
-}
-
-table#tabela-usuarios tbody tr:nth-child(even) {
-    background-color: #f0f7f7;
-}
-
-.acoes {
-    white-space: nowrap;
-}
-
-.botao-editar,
-.botao-excluir {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 700;
-    padding: 8px 14px;
-    border: none;
-    cursor: pointer;
-    margin-right: 6px;
-}
-
-.botao-editar {
-    background-color: #228B22;
-    color: #FFFFFF;
-}
-
-.botao-editar:hover {
-    background-color: #1b6f1b;
-}
-
-.botao-excluir {
-    background-color: #FFFFFF;
-    color: #c0392b;
-    border: 2px solid #c0392b;
-}
-
-.botao-excluir:hover {
-    background-color: #c0392b;
-    color: #FFFFFF;
-}
-
-
 /* =====================================================================
    TABLETS (a partir de 601px)
-   Estilos incrementais: só o que muda em relação ao celular.
    ===================================================================== */
 
 @media (min-width: 601px) {
-    body {
+    body.pagina-simples {
         padding: 20px;
     }
 
-    h1 {
+    .pagina-simples h1 {
         font-size: 2rem;
     }
 
-    h2 {
+    .pagina-simples h2 {
         font-size: 1.5rem;
     }
 
-    p {
+    .pagina-simples p {
         font-size: 1.125rem;
-        text-align: left;
-    }
-
-    main {
-        gap: 30px;
-    }
-
-    /* Menu em linha, com quebra automática */
-    nav#menu ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px;
     }
 
     /* Caixas de cor lado a lado */
@@ -366,99 +158,30 @@ table#tabela-usuarios tbody tr:nth-child(even) {
         padding: 30px;
         font-size: 1.25rem;
     }
-
-    /* Botões voltam ao tamanho natural */
-    input[type="submit"],
-    input[type="reset"] {
-        display: inline-block;
-        width: auto;
-        padding: 10px 20px;
-        margin-right: 10px;
-    }
-
-    /* Tabela volta a ser tabela de verdade */
-    table#tabela-usuarios {
-        display: table;
-        border-collapse: collapse;
-    }
-
-    table#tabela-usuarios tbody {
-        display: table-row-group;
-    }
-
-    table#tabela-usuarios thead {
-        display: table-header-group;
-    }
-
-    table#tabela-usuarios tr {
-        display: table-row;
-        margin-bottom: 0;
-        border: none;
-    }
-
-    table#tabela-usuarios th,
-    table#tabela-usuarios td {
-        display: table-cell;
-        border: 1px solid #cccccc;
-        padding: 12px;
-        text-align: left;
-    }
 }
 
-
-/*DESKTOPS (a partir de 1025px) */
+/* =====================================================================
+   DESKTOPS (a partir de 1025px)
+   ===================================================================== */
 
 @media (min-width: 1025px) {
-    body {
+    body.pagina-simples {
         max-width: 1200px;
         margin: 0 auto;
         padding: 40px;
     }
 
-    h1 {
+    .pagina-simples h1 {
         font-size: 2.5rem;
     }
 
-    h2 {
+    .pagina-simples h2 {
         font-size: 1.75rem;
-    }
-
-    main h2 {
-        text-align: left;
-    }
-
-    /* index.html: conteúdo principal e aviso lado a lado */
-    main.duas-colunas {
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: stretch;
-    }
-
-    main.duas-colunas section {
-        width: 100%;
-    }
-
-    main.duas-colunas aside {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    nav#menu li {
-        padding: 12px 24px;
-    }
-
-    .amostras {
-        gap: 20px;
     }
 
     .caixa-azul,
     .caixa-verde,
     .caixa-branca {
         font-size: 1.375rem;
-    }
-
-    table#tabela-usuarios th,
-    table#tabela-usuarios td {
-        padding: 14px;
     }
 }

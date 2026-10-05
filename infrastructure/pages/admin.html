@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo - Gerenciamento de Tributos</title>
+    <!-- Link CDN do Bootstrap oficial do slide -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="icon" type="image/png" href="../assets/favicon/erasebg-transformed.png">
-
 </head>
 <body>
-    <header>
-        <h1>Painel Administrativo</h1>
+
+    <header class="text-center my-4">
+        <h1 class="text-primary">Painel Administrativo</h1>
         <p>Voltar a página anterior: <a href="index.html" rel="prev">Voltar</a></p>
     </header>
 
-    <main>
+    <main class="container">
         <section id="usuarios">
             <h2>Usuários Cadastrados</h2>
 
-            <table id="tabela-usuarios">
+            <table id="tabela-usuarios" class="table table-striped table-hover">
                 <caption>Contribuintes com acesso ao sistema </caption>
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
+                        <th>Status</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -33,50 +36,57 @@
                         <td>001</td>
                         <td>Ana Beatriz Souza</td>
                         <td>ana.souza@tributos.gov.br</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
                         <td class="acoes">
-                            <button type="button" class="botao-editar">Editar</button>
-                            <button type="button" class="botao-excluir">Excluir</button>
+                            <button type="button" class="btn btn-success btn-sm">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
                         </td>
                     </tr>
                     <tr>
                         <td>002</td>
                         <td>Carlos Eduardo Lima</td>
                         <td>carlos.lima@tributos.gov.br</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
                         <td class="acoes">
-                            <button type="button" class="botao-editar">Editar</button>
-                            <button type="button" class="botao-excluir">Excluir</button>
+                            <button type="button" class="btn btn-success btn-sm">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
                         </td>
                     </tr>
                     <tr>
                         <td>003</td>
                         <td>Fernanda Torres</td>
                         <td>fernanda.torres@tributos.gov.br</td>
+                        <td><span class="badge bg-secondary">Inativo</span></td>
                         <td class="acoes">
-                            <button type="button" class="botao-editar">Editar</button>
-                            <button type="button" class="botao-excluir">Excluir</button>
+                            <button type="button" class="btn btn-success btn-sm">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
                         </td>
                     </tr>
                     <tr>
                         <td>004</td>
                         <td>João Pedro Almeida</td>
                         <td>joao.almeida@tributos.gov.br</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
                         <td class="acoes">
-                            <button type="button" class="botao-editar">Editar</button>
-                            <button type="button" class="botao-excluir">Excluir</button>
+                            <button type="button" class="btn btn-success btn-sm">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
                         </td>
                     </tr>
                     <tr>
                         <td>005</td>
                         <td>Marina Costa Ribeiro</td>
                         <td>marina.ribeiro@tributos.gov.br</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
                         <td class="acoes">
-                            <button type="button" class="botao-editar">Editar</button>
-                            <button type="button" class="botao-excluir">Excluir</button>
+                            <button type="button" class="btn btn-success btn-sm">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
